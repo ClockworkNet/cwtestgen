@@ -10,6 +10,7 @@ module TestGen
       argument :with_lib, :type => :string, :desc => 'Place all shared objects in the lib directory'
       argument :with_gametel, :type => :string, :desc => 'Add support for the gametel gem'
       argument :with_mohawk, :type => :string, :desc => 'Add support for the mohawk gem'
+      argument :cw, :type => :string, :desc => "Sets up CW cuke environment"
       desc "Generates a project structure for testing with Cucumber"
       
       def self.source_root
