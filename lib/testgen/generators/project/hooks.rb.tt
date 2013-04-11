@@ -1,7 +1,6 @@
 <% if pageobject_driver.downcase == 'watir' -%>
 require 'watir-webdriver'
 <% end %>
-
 Before do
 <% if pageobject_driver.downcase == 'watir' -%>
   @browser = Watir::Browser.new :firefox
