@@ -26,11 +26,11 @@ module TestGen
       end
     
       def copy_gemfile
-        template "Gemfile.tt", "#{name}/Gemfile"
+        template "Gemfile.tt", "#{name}/Gemfile" if cw != 'true'
       end
       
       def copy_rakefile
-        copy_file "Rakefile", "#{name}/Rakefile"
+        copy_file "Rakefile", "#{name}/Rakefile" if cw != 'true'
       end
       
       def create_cucumber_directories
