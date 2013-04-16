@@ -48,7 +48,7 @@ module TestGen
       end
       
       def copy_hooks
-        template "hooks.rb.tt", "#{name}/features/support/hooks.rb" unless no_driver_selected
+        template "hooks.rb.tt", "#{name}/features/support/hooks.rb" if cw != 'true'
       end
       
       def create_lib_directory
