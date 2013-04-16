@@ -38,6 +38,10 @@ module TestGen
         empty_directory("#{name}/features/support")
         empty_directory("#{name}/features/step_definitions")
       end
+
+      def create_log_directory
+        empty_directory("#{name}/logs") if cw == 'true'
+      end
       
       def copy_env
         template "env.rb.tt", "#{name}/features/support/env.rb"
