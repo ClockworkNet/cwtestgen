@@ -1,6 +1,6 @@
 require 'thor/group'
 
-module TestGen
+module CwTestGen
   module Generators
     class Project < Thor::Group
       include Thor::Actions

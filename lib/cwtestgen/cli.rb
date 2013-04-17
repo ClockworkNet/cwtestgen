@@ -1,11 +1,11 @@
 require 'thor'
-require 'testgen/generators/project'
+require 'cwtestgen/generators/project'
 
-module TestGen
+module CwTestGen
   class CLI < Thor
     desc "project <project_name>", "Create a new test project"
     def project(name)
-      TestGen::Generators::Project.start([name])
+      CwTestGen::Generators::Project.start([name])
     end
   end
 end
