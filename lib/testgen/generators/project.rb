@@ -27,7 +27,7 @@ module TestGen
       end
 
       def create_log_directory
-        empty_directory("#{name}/logs")
+        empty_directory("#{name}/features/logs")
       end
       
       def copy_env
