@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "testgen/version"
+require "cwtestgen/version"
 
 Gem::Specification.new do |s|
-  s.name        = "testgen"
-  s.version     = TestGen::VERSION
-  s.authors     = ["Jeffrey S. Morgan"]
-  s.email       = ["jeff.morgan@leandog.com"]
-  s.homepage    = "http://github.com/cheezy/testgen"
-  s.summary     = %q{Generators for testers using Cucumber}
-  s.description = %q{A collection of generators build things for testers using Cucumber}
+  s.name        = "cwtestgen"
+  s.version     = CwTestGen::VERSION
+  s.authors     = ["Jeffrey S. Morgan", "Chris Smalley"]
+  s.email       = ["chris@clockwork.net"]
+  s.homepage    = "http://github.com/jonsie/cwtestgen"
+  s.summary     = %q{Generators for Clockwork testers using Cucumber}
+  s.description = %q{Generates the Clockwork specific Cucumber testing environment}
 
-  s.rubyforge_project = "testgen"
+  s.rubyforge_project = "cwtestgen"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
