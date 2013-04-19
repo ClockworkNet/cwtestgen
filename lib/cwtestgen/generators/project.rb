@@ -57,8 +57,10 @@ module CwTestGen
       end
 
       def create_symlink_to_lib
-        unless File.symlink?("#{name}/features/support/lib/")
-          File.symlink("#{name}/features/support/lib", "lib")
+        if File.exist?("lib")
+          unless File.symlink?("#{name}/features/support/lib/")
+            File.symlink("#{name}/features/support/lib", "lib")
+          end
         end
       end
       
