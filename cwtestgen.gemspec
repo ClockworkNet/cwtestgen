@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cucumber', '>=1.2.0'
   s.add_dependency 'rspec', '>=2.13.0'
   s.add_dependency 'require_all'
+  s.add_dependency 'page-object'
   s.add_dependency 'watir-webdriver'
   s.add_dependency 'watir-webdriver-performance'
 
