@@ -47,6 +47,12 @@ module CwTestGen
           template "sample_steps.rb.tt", "#{name}/features/support/step_definitions/#{name}_steps.rb"
         end
       end
+
+      def create_symlink_to_lib
+        unless File.symlink?("#{name}/features/support/lib/")
+          File.symlink("#{name}/features/support/lib", "lib")
+        end
+      end
       
       private
 
