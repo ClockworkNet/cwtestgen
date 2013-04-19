@@ -30,6 +30,14 @@ module CwTestGen
       def create_log_directory
         empty_directory("#{name}/features/logs")
       end
+
+      def create_screenshot_directory
+        empty_directory("#{name}/features/screenshots")
+      end
+      
+      def copy_hooks
+        template "env.rb.tt", "#{name}/features/support/hooks.rb"
+      end
       
       def copy_env
         template "env.rb.tt", "#{name}/features/support/env.rb"
