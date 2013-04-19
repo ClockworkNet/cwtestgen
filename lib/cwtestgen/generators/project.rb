@@ -36,9 +36,9 @@ module CwTestGen
       end
       
       def copy_hooks
-        template "env.rb.tt", "#{name}/features/support/hooks.rb"
+        template "hooks.rb.tt", "#{name}/features/support/hooks.rb"
       end
-      
+
       def copy_env
         template "env.rb.tt", "#{name}/features/support/env.rb"
       end
