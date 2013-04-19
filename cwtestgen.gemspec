@@ -5,11 +5,12 @@ require "cwtestgen/version"
 Gem::Specification.new do |s|
   s.name        = "cwtestgen"
   s.version     = CwTestGen::VERSION
-  s.authors     = ["Jeffrey S. Morgan", "Chris Smalley"]
-  s.email       = ["chris@clockwork.net"]
-  s.homepage    = "http://github.com/jonsie/cwtestgen"
+  s.authors     = ["Jeffrey S. Morgan", "Chris Smalley", "Andrew Leaf"]
+  s.email       = ["chris@clockwork.net", "andrew@clockwork.net"]
+  s.homepage    = "https://github.com/ClockworkNet/cwtestgen"
   s.summary     = %q{Generators for Clockwork testers using Cucumber}
   s.description = %q{Generates the Clockwork specific Cucumber testing environment}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "cwtestgen"
 
@@ -22,6 +23,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'cucumber', '>=1.2.0'
   s.add_dependency 'rspec', '>=2.13.0'
   s.add_dependency 'require_all'
+  s.add_dependency 'watir-webdriver'
+  s.add_dependency 'watir-webdriver-performance'
 
   s.add_development_dependency 'aruba'
 end

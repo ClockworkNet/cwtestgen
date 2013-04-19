@@ -6,6 +6,7 @@ module CwTestGen
       include Thor::Actions
     
       argument :name, :type => :string, :desc => 'The name of the project'
+      argument :with_page_templates, :type => :string, :desc => 'Place Page Templates into features/support/pages/'
       desc "Generates a project structure for testing with Cucumber"
       
       def self.source_root
@@ -37,8 +38,21 @@ module CwTestGen
       def create_pages_directory
         empty_directory("#{name}/features/support/pages")
       end
+
+      def copy_page_templates
+        if gen_page_templates
+          template "clockwork_page.rb.tt", "#{name}/features/support/pages/clockwork_page.rb" 
+          template "home_page.rb.tt", "#{name}/features/support/pages/home_page.rb"
+          template "sample_cucumber.feature.tt", "#{name}/features/sample_cucumber.feature"
+          template "sample_steps.rb.tt", "#{name}/features/support/step_definitions/#{name}_steps.rb"
+        end
+      end
       
       private
+
+      def gen_page_templates
+        with_page_templates == 'true'
+      end
 
     end
   end
