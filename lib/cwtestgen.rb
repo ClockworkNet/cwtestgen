@@ -1,2 +1,2 @@
 require "cwtestgen/version"
-require 'cwtestgen/cli'
+require "cwtestgen/cli"
