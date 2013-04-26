@@ -59,12 +59,12 @@ module CwTestGen
 
       def create_symlink_to_lib
         if gen_symlink_to_lib
-          if File.symlink?("lib")
+          if File.symlink?("#{name}/features/support/lib")
             return nil
           end
 
           if File.directory?("../lib")
-            File.symlink(Dir.pwd + "/../lib","#{name}/features/support/lib")
+            File.symlink("../../../../lib","#{name}/features/support/lib")
           end
         end
       end
