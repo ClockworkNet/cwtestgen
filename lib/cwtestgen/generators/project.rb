@@ -7,6 +7,7 @@ module CwTestGen
     
       argument :name, :type => :string, :desc => 'The name of the project'
       argument :with_page_templates, :type => :string, :desc => 'Place Page Templates into features/support/pages/'
+      argument :with_lib_symlink, :type => :string, :desc => 'Create a symlink to ../lib inside features/support/'
       desc "Generates a project structure for testing with Cucumber"
       
       def self.source_root
@@ -57,8 +58,14 @@ module CwTestGen
       end
 
       def create_symlink_to_lib
-        if File.directory?("lib")
-          File.symlink(Dir.pwd + "/lib","#{name}/features/support/lib")
+        if gen_symlink_to_lib
+          if File.symlink?("lib")
+            return nil
+          end
+
+          if File.directory?("../lib")
+            File.symlink(Dir.pwd + "/../lib","#{name}/features/support/lib")
+          end
         end
       end
       
@@ -66,6 +73,10 @@ module CwTestGen
 
       def gen_page_templates
         with_page_templates == 'true'
+      end
+
+      def gen_symlink_to_lib
+        with_lib_symlink == 'true'        
       end
 
     end
