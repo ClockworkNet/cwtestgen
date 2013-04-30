@@ -1,6 +1,8 @@
 After do |scenario|
-  if scenario.failed?
-    failed_screenshot = "./features/screenshots/FAILED_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}_"+Time.now.to_s.gsub(/[ :]/,"_")+".png"
-    @browser.screenshot.save failed_screenshot
+  if File.directory?("features/screenshots")
+    if scenario.failed?
+      failed_screenshot = "./features/screenshots/FAILED_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}_"+Time.now.to_s.gsub(/[ :]/,"_")+".png"
+      @browser.screenshot.save failed_screenshot
+    end
   end
 end
