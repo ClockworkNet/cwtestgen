@@ -6,3 +6,12 @@ After do |scenario|
     end
   end
 end
+
+Before ('@browser2') do
+  @browser2 = Watir::Browser.new
+  @browser2.driver.manage.timeouts.implicit_wait=3
+end
+
+After ('@browser2') do
+  @browser2.close
+end
