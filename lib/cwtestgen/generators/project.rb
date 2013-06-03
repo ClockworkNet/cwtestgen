@@ -53,7 +53,7 @@ module CwTestGen
           template "clockwork_page.rb.tt", "#{name}/features/support/pages/clockwork_page.rb" 
           template "home_page.rb.tt", "#{name}/features/support/pages/home_page.rb"
           template "sample_cucumber.feature.tt", "#{name}/features/sample_cucumber.feature"
-          template "sample_steps.rb.tt", "#{name}/features/support/step_definitions/#{name}_steps.rb"
+          template "sample_steps.rb.tt", "#{name}/step_definitions/#{name}_steps.rb"
         end
       end
 
